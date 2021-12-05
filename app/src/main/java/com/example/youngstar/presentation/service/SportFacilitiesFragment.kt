@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.example.youngstar.R
 import com.example.youngstar.adapters.SportTowerAdapter
@@ -29,6 +31,18 @@ class SportFacilitiesFragment : BindingFragment<FragmentSportFacilitiesBinding>(
     private var categoryList =
         listOf("Football", "Boxing", "Kurash", "Suzish", "Tennis", "Karate", "MMA")
 
+    private var categoryListRegion =
+        listOf(
+            "Tashkent",
+            "Samarqand",
+            "Navoiy",
+            "Sirdaryo",
+            "Jizzax",
+            "Qashqadaryo",
+            "Surxondaryo",
+            "Xorazim"
+        )
+
     private lateinit var sportTowerViewModel: SportTowerViewModel
     private lateinit var adapterSportTower: SportTowerAdapter
 
@@ -45,8 +59,22 @@ class SportFacilitiesFragment : BindingFragment<FragmentSportFacilitiesBinding>(
             Toast.makeText(requireContext(), "onClick", Toast.LENGTH_SHORT).show()
         }
 
+        val adapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_item, categoryListRegion
+        )
+        binding.regions.adapter = adapter
+
         binding.apply {
             rv.adapter = adapterSportTower
+
+            icBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
+
+            for (category in categoryList) {
+                tabLayout.addTab(tabLayout.newTab().setText(category))
+            }
 
             categoryList.forEachIndexed { index, s ->
                 val tabBinding = ItemTabBinding.inflate(layoutInflater)
@@ -103,6 +131,7 @@ class SportFacilitiesFragment : BindingFragment<FragmentSportFacilitiesBinding>(
                 }
             }
         }
+
     }
 
     /*private fun loadTabData(category: String) {

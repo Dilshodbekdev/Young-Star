@@ -186,7 +186,6 @@
                     android:layout_height="25dp"
                     android:src="@drawable/ic_baseline_add_24"
                     app:civ_border_color="#4662FF"
-
                     app:civ_border_overlay="true"
                     app:civ_border_width="1dp"
                     app:layout_constraintBottom_toBottomOf="@id/cv"
