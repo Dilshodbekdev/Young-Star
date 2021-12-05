@@ -20,4 +20,29 @@
         android:name="com.example.youngstar.presentation.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/facilityFragment"
+        android:name="com.example.youngstar.presentation.service.FacilityFragment"
+        android:label="fragment_facility"
+        tools:layout="@layout/fragment_facility" />
+    <fragment
+        android:id="@+id/levelUpdateFragment"
+        android:name="com.example.youngstar.presentation.service.LevelUpdateFragment"
+        android:label="fragment_level_update"
+        tools:layout="@layout/fragment_level_update" />
+    <fragment
+        android:id="@+id/service_fragment"
+        android:name="com.example.youngstar.presentation.service.ServiceFragment"
+        android:label="fragment_service"
+        tools:layout="@layout/fragment_service" />
+    <fragment
+        android:id="@+id/sportFacilitiesFragment"
+        android:name="com.example.youngstar.presentation.service.SportFacilitiesFragment"
+        android:label="fragment_sport_facilities"
+        tools:layout="@layout/fragment_sport_facilities" />
+    <fragment
+        android:id="@+id/writeTrainingFragment"
+        android:name="com.example.youngstar.presentation.service.WriteTrainingFragment"
+        android:label="fragment_write_training"
+        tools:layout="@layout/fragment_write_training" />
 </navigation>
