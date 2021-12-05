@@ -17,6 +17,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/iv_history"
+            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_avatar" />

@@ -174,17 +174,19 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/avatar5" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/avatar1"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/ic_avatar"
+                    android:src="@drawable/ic_baseline_add_24"
                     app:civ_border_color="#4662FF"
+
                     app:civ_border_overlay="true"
                     app:civ_border_width="1dp"
                     app:layout_constraintBottom_toBottomOf="@id/cv"

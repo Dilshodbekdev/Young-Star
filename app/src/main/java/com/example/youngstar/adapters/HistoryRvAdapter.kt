@@ -5,15 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.youngstar.R
 import com.example.youngstar.databinding.ItemHistoryBinding
 import com.example.youngstar.databinding.ItemPostBinding
 
 class HistoryRvAdapter : RecyclerView.Adapter<HistoryRvAdapter.VH>() {
 
 
-    inner class VH(private val binding: ItemHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(name: String, position: Int) {
-
+    inner class VH(private val binding: ItemHistoryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun onBind() {
+            binding.apply {
+                avatar.setImageResource(R.drawable.avatar3)
+                ivHistory.setImageResource(R.drawable.avatar4)
+            }
         }
     }
 
@@ -22,7 +27,7 @@ class HistoryRvAdapter : RecyclerView.Adapter<HistoryRvAdapter.VH>() {
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-
+        holder.onBind()
     }
 
     override fun getItemCount(): Int = 10

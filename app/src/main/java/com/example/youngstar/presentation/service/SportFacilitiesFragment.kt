@@ -42,7 +42,7 @@ class SportFacilitiesFragment : BindingFragment<FragmentSportFacilitiesBinding>(
         )
 
         adapterSportTower = SportTowerAdapter {
-            Toast.makeText(requireContext(), "zdgr", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "onClick", Toast.LENGTH_SHORT).show()
         }
 
         binding.apply {
