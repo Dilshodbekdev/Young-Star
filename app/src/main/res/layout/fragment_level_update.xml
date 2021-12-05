@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAEEF4"
-    tools:context=".presentation.service.SportFacilitiesFragment">
+    tools:context=".presentation.service.LevelUpdateFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout1"
@@ -45,7 +45,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sport facilities"
+            android:text="Level update"
             android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -55,36 +55,33 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cv_search"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:elevation="0dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="0dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout1"
-        app:layout_constraintWidth_percent="0.96">
+        app:layout_constraintVertical_bias="0.02" />
 
-        <EditText
-            android:id="@+id/search_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:drawableStart="@drawable/ic_search"
-            android:drawableEnd="@drawable/ic_record"
-            android:drawablePadding="20dp"
-            android:hint="Search"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="@android:color/darker_gray" />
-    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="jones Smitt"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintWidth_percent="0.6" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -93,34 +90,56 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:overScrollMode="never"
-        app:layout_constraintTop_toBottomOf="@id/cv_search"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
         app:tabIndicatorHeight="0dp"
         app:tabMode="scrollable"
         app:tabPaddingStart="20dp"
         app:tabRippleColor="@null" />
 
     <TextView
+        android:id="@+id/tv_my_statistic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Eng yaqin inshootlar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
-
-    <Spinner
-        android:id="@+id/regions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mening statistikam"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_games_history"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/regions"
-        app:layout_constraintWidth_percent="0.96"
-        tools:listitem="@layout/item_spost_facilitie" />
+        app:layout_constraintTop_toBottomOf="@id/tv_my_statistic"
+        tools:listitem="@layout/item_games_history" />
 
+    <TextView
+        android:id="@+id/tv_my_games"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mening statistikam"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_games_history" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_games"
+        app:layout_constraintWidth_percent="0.96"
+        tools:listitem="@layout/item_games" />
 </androidx.constraintlayout.widget.ConstraintLayout>
