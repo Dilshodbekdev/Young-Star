@@ -46,6 +46,7 @@ class SportFacilitiesFragment : BindingFragment<FragmentSportFacilitiesBinding>(
         }
 
         binding.apply {
+            rv.adapter = adapterSportTower
 
             categoryList.forEachIndexed { index, s ->
                 val tabBinding = ItemTabBinding.inflate(layoutInflater)
